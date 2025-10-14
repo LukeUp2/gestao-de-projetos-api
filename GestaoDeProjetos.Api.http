@@ -1,6 +1,24 @@
-@GestaoDeProjetos.Api_HostAddress = http://localhost:5053
+@HostAddress = http://localhost:5053
 
-GET {{GestaoDeProjetos.Api_HostAddress}}/weatherforecast/
+POST {{HostAddress}}/api/projects
+Content-Type: : application/json
+
+###
+GET {{HostAddress}}/api/projects
 Accept: application/json
 
 ###
+POST {{HostAddress}}/api/tasks
+Content-Type: : application/json
+
+###
+GET {{{{HostAddress}}}}/api//tasks?status=&priority=&projectId=1
+Content-Type: : application/json
+
+###
+PUT {{HostAddress}}/api/tasks/{id}/status
+Content-Type: : application/json
+
+###
+DELETE  {{HostAddress}}/api//tasks/{id}
+Content-Type: : application/json

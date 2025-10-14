@@ -1,0 +1,96 @@
+# ==========================
+# .NET / C# / ASP.NET Core
+# ==========================
+bin/
+obj/
+*.user
+*.rsuser
+*.suo
+*.userosscache
+*.sln.docstates
+*.cache
+*.log
+*.vspscc
+*.vssscc
+
+# Rider / VSCode / VS
+.idea/
+.vscode/
+.vs/
+
+# Arquivos de build
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Dependências locais
+packages/
+*.nupkg
+*.snk
+
+# Configurações de ambiente
+appsettings.Development.json
+appsettings.Local.json
+appsettings.*.json
+secrets.json
+
+# ==========================
+# Docker
+# ==========================
+# Arquivos de build temporários
+docker-compose.override.yml
+docker-compose.debug.yml
+docker-compose.local.yml
+Dockerfile.*
+!Dockerfile
+!.dockerignore
+
+# Volumes e dados do container
+/data/
+pgdata/
+postgres-data/
+**/postgres-data/
+**/pgdata/
+
+# ==========================
+# Logs e temporários
+# ==========================
+*.log
+logs/
+Logs/
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swn
+*.swm
+*.swo
+*.DS_Store
+Thumbs.db
+
+# ==========================
+# Testes e Cobertura
+# ==========================
+TestResults/
+*.coverage
+*.coveragexml
+*.trx
+*.profdata
+
+# ==========================
+# Sistema Operacional
+# ==========================
+# macOS
+.DS_Store
+
+# Windows
+desktop.ini
+
+# Linux
+*~
+
+# ==========================
+# Docker Compose Build Cache
+# ==========================
+.docker/
+docker-compose-build/
