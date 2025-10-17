@@ -3,17 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace GestaoDeProjetos.Api.Entities
+namespace GestaoDeProjetos.Api.Requests
 {
-    public class Project
+    public class CreateProjectRequestJson
     {
-        public long Id { get; set; }
         public string Name { get; set; } = string.Empty;
-        public string Description { get; set; } = string.Empty;
+        public string? Description { get; set; }
         public DateOnly StartDate { get; set; }
         public DateOnly? EndDate { get; set; }
-
-        //Relationship
-        public List<Task> Tasks { get; set; } = [];
     }
 }
