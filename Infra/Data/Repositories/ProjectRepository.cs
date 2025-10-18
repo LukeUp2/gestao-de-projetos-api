@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace GestaoDeProjetos.Api.Infra.Data.Repositories
 {
@@ -17,6 +17,13 @@ namespace GestaoDeProjetos.Api.Infra.Data.Repositories
         public async Task Create(Entities.Project project)
         {
             await _dbContext.Projects.AddAsync(project);
+        }
+
+        public async Task<List<Entities.Project>> ListAll()
+        {
+            return await _dbContext.Projects
+                .AsNoTracking()
+                .ToListAsync();
         }
     }
 }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using GestaoDeProjetos.Api.Requests;
 using GestaoDeProjetos.Api.UseCases.Project.Create;
+using GestaoDeProjetos.Api.UseCases.Project.ListAll;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GestaoDeProjetos.Api.Controllers
@@ -13,9 +14,10 @@ namespace GestaoDeProjetos.Api.Controllers
     public class ProjectController : ControllerBase
     {
         [HttpGet]
-        public void Get()
+        public async Task<IActionResult> GetAll([FromServices] ListAllProjectsUseCase useCase)
         {
-
+            var result = await useCase.Execute();
+            return Ok(result);
         }
 
         [HttpPost]
