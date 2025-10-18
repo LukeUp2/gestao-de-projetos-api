@@ -19,10 +19,18 @@ namespace GestaoDeProjetos.Api.Infra.Data.Repositories
             await _dbContext.Projects.AddAsync(project);
         }
 
+        public async Task<bool> CheckIfProjectExists(long projectId)
+        {
+            return await _dbContext.Projects
+                .AsNoTracking()
+                .AnyAsync(project => project.Id.Equals(projectId));
+        }
+
         public async Task<List<Entities.Project>> ListAll()
         {
             return await _dbContext.Projects
                 .AsNoTracking()
+                .Include(x => x.Tasks)
                 .ToListAsync();
         }
     }

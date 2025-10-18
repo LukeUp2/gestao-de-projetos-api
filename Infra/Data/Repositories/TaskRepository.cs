@@ -13,5 +13,10 @@ namespace GestaoDeProjetos.Api.Infra.Data.Repositories
         {
             _dbContext = dbContext;
         }
+
+        public async Task Create(Entities.Task task)
+        {
+            await _dbContext.Tasks.AddAsync(task);
+        }
     }
 }

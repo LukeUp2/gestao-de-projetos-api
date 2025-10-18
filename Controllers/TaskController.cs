@@ -2,7 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using GestaoDeProjetos.Api.Requests;
+using GestaoDeProjetos.Api.UseCases.Tasks.Create;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ActionConstraints;
 
 namespace GestaoDeProjetos.Api.Controllers
 {
@@ -17,9 +20,10 @@ namespace GestaoDeProjetos.Api.Controllers
         }
 
         [HttpPost]
-        public void Create()
+        public async Task<IActionResult> Create([FromBody] CreateTaskRequestJson request, [FromServices] CreateTaskUseCase useCase)
         {
-
+            await useCase.Execute(request);
+            return Ok("Task criada com sucesso!");
         }
 
         [HttpPut]

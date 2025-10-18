@@ -13,11 +13,11 @@ namespace GestaoDeProjetos.Api.UseCases.Project.Create
         {
             RuleFor(project => project.Name)
                 .NotEmpty().WithMessage("You must provide a project name.")
-                .MinimumLength(3).WithMessage("The project name must have at least 3 caracters")
-                .MaximumLength(100).WithMessage("The project name shouldn't have more than 100 caracters");
+                .MinimumLength(3).WithMessage("The project name must have at least 3 characters")
+                .MaximumLength(100).WithMessage("The project name shouldn't have more than 100 characters");
 
             RuleFor(project => project.Description)
-                .MaximumLength(500).WithMessage("The project description shouldn't have more than 500 caracters")
+                .MaximumLength(500).WithMessage("The project description shouldn't have more than 500 characters")
                 .When(project => !string.IsNullOrWhiteSpace(project.Description));
 
             RuleFor(project => project.StartDate)

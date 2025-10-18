@@ -31,6 +31,11 @@ namespace GestaoDeProjetos.Api.Filters
                 context.HttpContext.Response.StatusCode = (int)HttpStatusCode.BadRequest;
                 context.Result = new BadRequestObjectResult(new ResponseErrorJson(exception.ErrorMessages));
             }
+            else if (context.Exception is NotFoundException)
+            {
+                context.HttpContext.Response.StatusCode = (int)HttpStatusCode.NotFound;
+                context.Result = new NotFoundObjectResult(new ResponseErrorJson(context.Exception.Message));
+            }
         }
 
         private void HandleUnknownException(ExceptionContext context)

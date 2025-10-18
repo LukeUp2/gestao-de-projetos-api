@@ -1,3 +1,4 @@
+using System.Text.Json.Serialization;
 using GestaoDeProjetos.Api.Extensions;
 using GestaoDeProjetos.Api.Filters;
 
@@ -8,9 +9,16 @@ builder.Services.AddRouting(opt => opt.LowercaseQueryStrings = true);
 
 builder.Services.AddMvc(opt => opt.Filters.Add<ExceptionFilter>());
 
+
 builder.Services.AddApplication(builder.Configuration);
 
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .AddJsonOptions(opt =>
+    {
+        //Server para ser possivel enviar o enum como string
+        //Exemplo: "status": "Pending" e não "status": 0 
+        opt.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+    });
 
 var app = builder.Build();
 
