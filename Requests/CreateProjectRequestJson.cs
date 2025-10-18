@@ -12,4 +12,5 @@ namespace GestaoDeProjetos.Api.Requests
         public DateOnly StartDate { get; set; }
         public DateOnly? EndDate { get; set; }
     }
+
 }

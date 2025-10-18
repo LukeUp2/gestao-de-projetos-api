@@ -1,7 +1,14 @@
 @HostAddress = http://localhost:5053
 
 POST {{HostAddress}}/api/projects
-Content-Type: : application/json
+Content-Type: application/json
+
+{
+    "name": "Teste",
+    "description": "teste 1 2 3",
+    "startDate": "2025-11-01",
+    "endDate": null
+}
 
 ###
 GET {{HostAddress}}/api/projects

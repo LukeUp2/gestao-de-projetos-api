@@ -16,6 +16,7 @@ namespace GestaoDeProjetos.Api.Extensions
             AddDbContext(services, configuration);
             AddUseCases(services);
             AddRepositories(services);
+            AddUnitOfWork(services);
         }
 
 
@@ -36,6 +37,11 @@ namespace GestaoDeProjetos.Api.Extensions
         {
             services.AddScoped<ProjectRepository>();
             services.AddScoped<TaskRepository>();
+        }
+
+        private static void AddUnitOfWork(IServiceCollection services)
+        {
+            services.AddScoped<UnitOfWork>();
         }
 
     }

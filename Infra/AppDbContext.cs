@@ -13,7 +13,7 @@ namespace GestaoDeProjetos.Api.Infra
 
         }
 
-        DbSet<Project> Projects { get; set; }
-        DbSet<Entities.Task> Tasks { get; set; }
+        public DbSet<Project> Projects { get; set; }
+        public DbSet<Entities.Task> Tasks { get; set; }
     }
 }
