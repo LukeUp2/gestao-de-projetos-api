@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using GestaoDeProjetos.Api.Enums;
 using GestaoDeProjetos.Api.Requests;
 using Microsoft.EntityFrameworkCore;
 
@@ -36,6 +37,22 @@ namespace GestaoDeProjetos.Api.Infra.Data.Repositories
             }
 
             return await query.ToListAsync();
+        }
+
+        public async Task<Entities.Task?> GetById(long taskId)
+        {
+            var task = await _dbContext.Tasks.FindAsync(taskId);
+            return task;
+        }
+
+        public void UpdateStatus(Entities.Task task, StatusEnum status)
+        {
+            task.Status = status;
+        }
+
+        public void Delete(Entities.Task task)
+        {
+            _dbContext.Tasks.Remove(task);
         }
     }
 }

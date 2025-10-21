@@ -19,9 +19,9 @@ POST {{HostAddress}}/api/tasks
 Content-Type: application/json
 
 {
-    "title": "Testes de integração",
-    "description": "Implementar testes automáticos para validação de fluxos principais",
-    "status": "DOING",
+    "title": "Blablabla",
+    "description": "Implementar frescura",
+    "status": "TODO",
     "priority": "HIGH",
     "dueDate": "2025-10-25",
     "projectId": 2
@@ -31,9 +31,14 @@ GET {{HostAddress}}/api/tasks?projectId=4&status=doing&priority=medium
 Content-Type: application/json
 
 ###
-PUT {{HostAddress}}/api/tasks/{id}/status
+PUT {{HostAddress}}/api/tasks/1/status
+//{{HostAddress}}/api/tasks/{id}/status
 Content-Type: application/json
 
+  {
+    "status": "DONE"
+  }
+
 ###
-DELETE  {{HostAddress}}/api//tasks/{id}
+DELETE  {{HostAddress}}/api/tasks/7
 Content-Type: application/json
