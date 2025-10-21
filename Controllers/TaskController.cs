@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using GestaoDeProjetos.Api.Requests;
 using GestaoDeProjetos.Api.UseCases.Tasks.Create;
+using GestaoDeProjetos.Api.UseCases.Tasks.Get;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ActionConstraints;
 
@@ -14,9 +15,10 @@ namespace GestaoDeProjetos.Api.Controllers
     public class TaskController : ControllerBase
     {
         [HttpGet]
-        public void Get()
+        public async Task<IActionResult> Get([FromQuery] TaskRouteFilterRequest queryRequest, [FromServices] GetTaskByProjectIdUseCase useCase)
         {
-
+            var result = await useCase.Execute(queryRequest);
+            return Ok(result);
         }
 
         [HttpPost]

@@ -7,6 +7,7 @@ using GestaoDeProjetos.Api.Infra.Data.Repositories;
 using GestaoDeProjetos.Api.UseCases.Project.Create;
 using GestaoDeProjetos.Api.UseCases.Project.ListAll;
 using GestaoDeProjetos.Api.UseCases.Tasks.Create;
+using GestaoDeProjetos.Api.UseCases.Tasks.Get;
 using Microsoft.EntityFrameworkCore;
 
 namespace GestaoDeProjetos.Api.Extensions
@@ -38,6 +39,7 @@ namespace GestaoDeProjetos.Api.Extensions
 
             //Tasks
             services.AddScoped<CreateTaskUseCase>();
+            services.AddScoped<GetTaskByProjectIdUseCase>();
         }
 
         private static void AddRepositories(IServiceCollection services)

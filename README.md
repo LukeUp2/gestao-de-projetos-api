@@ -40,11 +40,11 @@ A modelagem pode ser modificada pelo inscrito. Porém, precisa ser justificado o
 ### 🌐 2. Endpoints REST
 
 | Método     | Endpoint                              | Descrição                                     |
-| ---------- | ------------------------------------- | --------------------------------------------- |
-| **POST**   | `/projects`                           | Criar novo projeto (`name` obrigatório)       |
-| **GET**    | `/projects`                           | Listar todos os projetos (paginação opcional) |
-| **POST**   | `/tasks`                              | Criar nova tarefa vinculada a um projeto      |
-| **GET**    | `/tasks?status=&priority=&projectId=` | Buscar tarefas com filtros opcionais          |
+| ---------- | ------------------------------------- | --------------------------------------------- | --- |
+| **POST**   | `/projects`                           | Criar novo projeto (`name` obrigatório)       | ✅  |
+| **GET**    | `/projects`                           | Listar todos os projetos (paginação opcional) | ✅  |
+| **POST**   | `/tasks`                              | Criar nova tarefa vinculada a um projeto      | ✅  |
+| **GET**    | `/tasks?status=&priority=&projectId=` | Buscar tarefas com filtros opcionais          | ✅  |
 | **PUT**    | `/tasks/{id}/status`                  | Atualizar apenas o status da tarefa           |
 | **DELETE** | `/tasks/{id}`                         | Remover tarefa                                |
 
