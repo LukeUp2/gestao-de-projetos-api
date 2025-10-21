@@ -46,22 +46,7 @@ A modelagem pode ser modificada pelo inscrito. Porém, precisa ser justificado o
 | **POST**   | `/tasks`                              | Criar nova tarefa vinculada a um projeto      | ✅  |
 | **GET**    | `/tasks?status=&priority=&projectId=` | Buscar tarefas com filtros opcionais          | ✅  |
 | **PUT**    | `/tasks/{id}/status`                  | Atualizar apenas o status da tarefa           | ✅  |
-| **DELETE** | `/tasks/{id}`                         | Remover tarefa                                |
-
----
-
-## ✅ Requisitos Obrigatórios
-
-- 🧑‍💻 **Java 17+** e **Spring Boot 3+**
-- 🧠 **Spring Data JPA**
-- 🗄️ Banco Relacional (**PostgreSQL** ou **H2**)
-- ✔️ **Bean Validation**
-- 🧪 **Testes Automatizados**
-  - Unitários (Services mockados)
-  - Integração (Controllers com MockMvc ou Testcontainers)
-- ⚠️ Tratamento de erros com `@ControllerAdvice`
-- 📦 Uso de **DTOs** (`record` ou classes simples)
-- 📘 **README** explicando como rodar o projeto
+| **DELETE** | `/tasks/{id}`                         | Remover tarefa                                | ✅  |
 
 ---
 
@@ -69,18 +54,9 @@ A modelagem pode ser modificada pelo inscrito. Porém, precisa ser justificado o
 
 - 🧭 Documentação **Swagger / OpenAPI**
 - 🔐 Autenticação simples com **JWT** ou Basic Auth
-- 🐳 Configuração de **Docker** / **docker-compose**
+- 🐳 Configuração de **Docker** / **docker-compose** ✅
 - ⚡ Uso de **MapStruct** para mapeamento de DTOs
 - 🔍 Testes de API com **RestAssured**
-
----
-
-## 🛠️ Tags
-
-`#Java` `#SpringBoot` `#Backend` `#DesafioTecnico`  
-`#API` `#RestAPI` `#Docker` `#Kubernetes`  
-`#PostgreSQL` `#Oracle` `#JPA` `#Swagger`  
-`#RestAssured` `#CleanCode` `#SoftwareEngineering`
 
 ---
 
