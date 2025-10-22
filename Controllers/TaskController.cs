@@ -16,7 +16,6 @@ namespace GestaoDeProjetos.Api.Controllers
     [Route("api/tasks")]
     public class TaskController : ControllerBase
     {
-        //TODO - AJEITAR OS STATUS CODES DE RESPOSTAS
         [HttpGet]
         public async Task<IActionResult> Get([FromQuery] TaskRouteFilterRequest queryRequest, [FromServices] GetTaskByProjectIdUseCase useCase)
         {
@@ -28,7 +27,7 @@ namespace GestaoDeProjetos.Api.Controllers
         public async Task<IActionResult> Create([FromBody] CreateTaskRequestJson request, [FromServices] CreateTaskUseCase useCase)
         {
             await useCase.Execute(request);
-            return Ok("Task criada com sucesso!");
+            return Created(string.Empty, "Task criada com sucesso!");
         }
 
         [HttpPut("{taskId}/status")]

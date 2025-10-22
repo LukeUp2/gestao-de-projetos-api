@@ -26,7 +26,7 @@ namespace GestaoDeProjetos.Api.Controllers
         public async Task<IActionResult> Create([FromServices] CreateProjectUseCase useCase, [FromBody] CreateProjectRequestJson request)
         {
             await useCase.Execute(request);
-            return Ok("Projeto criado com sucesso :)");
+            return Created(string.Empty, "Projeto criado com sucesso :)");
         }
     }
 }

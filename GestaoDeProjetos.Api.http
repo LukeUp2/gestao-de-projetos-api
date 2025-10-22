@@ -19,8 +19,8 @@ POST {{HostAddress}}/api/tasks
 Content-Type: application/json
 
 {
-    "title": "Blablabla",
-    "description": "Implementar frescura",
+    "title": "Teste",
+    "description": "Implementar testes",
     "status": "TODO",
     "priority": "HIGH",
     "dueDate": "2025-10-25",
