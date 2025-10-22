@@ -14,7 +14,6 @@ namespace GestaoDeProjetos.Api.Controllers
     public class ProjectController : ControllerBase
     {
         [HttpGet]
-        //TODO - Paginação
         public async Task<IActionResult> GetAll([FromServices] ListAllProjectsUseCase useCase, [FromQuery] PaginationQueryRequest query)
         {
             var result = await useCase.Execute(query);
