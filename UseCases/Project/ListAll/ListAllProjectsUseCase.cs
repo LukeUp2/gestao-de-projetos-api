@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using GestaoDeProjetos.Api.Extensions;
 using GestaoDeProjetos.Api.Infra.Data.Repositories;
+using GestaoDeProjetos.Api.Requests;
 using GestaoDeProjetos.Api.Responses;
 
 namespace GestaoDeProjetos.Api.UseCases.Project.ListAll
@@ -17,13 +18,19 @@ namespace GestaoDeProjetos.Api.UseCases.Project.ListAll
             _projectRepository = projectRepository;
         }
 
-        public async Task<List<ResponseProjectJson>> Execute()
+        public async Task<ResponseListAllProjectsJson> Execute(PaginationQueryRequest? query)
         {
-            var projects = await _projectRepository.ListAll();
-            return projects.Select(item =>
+            var page = query?.Page ?? 1;
+            var perPage = query?.PerPage ?? 3;
+
+            var projects = await _projectRepository.ListAll(page, perPage);
+
+            return new ResponseListAllProjectsJson
             {
-                return item.ToResponse();
-            }).ToList();
+                Items = projects.Select(item => item.ToResponse()).ToList(),
+                Page = page,
+                Total = perPage
+            };
         }
     }
 }

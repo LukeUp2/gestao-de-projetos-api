@@ -11,7 +11,7 @@ Content-Type: application/json
 }
 
 ###
-GET {{HostAddress}}/api/projects
+GET {{HostAddress}}/api/projects?page=1&perPage=2
 Accept: application/json
 
 ###

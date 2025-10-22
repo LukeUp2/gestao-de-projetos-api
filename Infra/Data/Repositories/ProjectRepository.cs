@@ -26,11 +26,13 @@ namespace GestaoDeProjetos.Api.Infra.Data.Repositories
                 .AnyAsync(project => project.Id.Equals(projectId));
         }
 
-        public async Task<List<Entities.Project>> ListAll()
+        public async Task<List<Entities.Project>> ListAll(int page, int perPage)
         {
             return await _dbContext.Projects
                 .AsNoTracking()
                 .Include(x => x.Tasks)
+                .Skip(perPage * (page - 1))
+                .Take(perPage)
                 .ToListAsync();
         }
     }

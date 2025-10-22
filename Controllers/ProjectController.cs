@@ -13,12 +13,11 @@ namespace GestaoDeProjetos.Api.Controllers
     [Route("api/projects")]
     public class ProjectController : ControllerBase
     {
-        //TODO - AJEITAR OS STATUS CODES DE RESPOSTAS
         [HttpGet]
         //TODO - Paginação
-        public async Task<IActionResult> GetAll([FromServices] ListAllProjectsUseCase useCase)
+        public async Task<IActionResult> GetAll([FromServices] ListAllProjectsUseCase useCase, [FromQuery] PaginationQueryRequest query)
         {
-            var result = await useCase.Execute();
+            var result = await useCase.Execute(query);
             return Ok(result);
         }
 

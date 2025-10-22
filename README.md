@@ -48,25 +48,6 @@ A modelagem pode ser modificada pelo inscrito. Porém, precisa ser justificado o
 | **PUT**    | `/tasks/{id}/status`                  | Atualizar apenas o status da tarefa           | ✅  |
 | **DELETE** | `/tasks/{id}`                         | Remover tarefa                                | ✅  |
 
----
-
-## 🏅 Diferenciais (Pontos Extras)
-
-- 🧭 Documentação **Swagger / OpenAPI**
-- 🔐 Autenticação simples com **JWT** ou Basic Auth
-- 🐳 Configuração de **Docker** / **docker-compose** ✅
-- ⚡ Uso de **MapStruct** para mapeamento de DTOs
-- 🔍 Testes de API com **RestAssured**
-
----
-
-### 💡 Dica
-
-> Foque em **organização, boas práticas e clareza do código**.  
-> Um bom README e commits bem descritos também serão avaliados. 😉
-
----
-
 ### 🧾 Licença
 
 Este projeto foi desenvolvido exclusivamente para o **processo seletivo SIS Innov & Tech** e não deve ser utilizado para fins comerciais.
